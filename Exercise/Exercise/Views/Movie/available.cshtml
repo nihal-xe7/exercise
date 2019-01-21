@@ -1,0 +1,26 @@
+﻿@using Exercise.Models
+@model Exercise.Models.Movies
+@{
+    ViewBag.Title = "available";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Available Movies....</h2>
+<div class="container-fluid">
+  <table class="table  ">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+    </tr>
+    </thead>
+
+    @foreach(var movie in Model.Movie){
+    <tr>
+        <td>@movie.Id</td>
+        <td>@movie.Name</td>
+    </tr>    
+    }
+
+  </table>
+</div>

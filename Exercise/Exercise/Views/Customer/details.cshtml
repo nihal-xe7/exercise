@@ -1,0 +1,24 @@
+﻿@model Exercise.Models.Customer
+@{
+    ViewBag.Title = "details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Customer details</h2>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+    </tr>
+    </thead>
+    @foreach (var customer in Model.customers)
+    {
+        <tr>
+            <td>@customer.Id</td>
+            <td ><a href="info/@customer.Name">@customer.Name</a></td>
+        </tr>
+    }
+</table>
+
