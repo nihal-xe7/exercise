@@ -1,23 +1,89 @@
-﻿@model Exercise.Models.Customer
+﻿@model List<Exercise.Models.Customer>
+
 @{
     ViewBag.Title = "details";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    int i = 1, y = 2;
+    string dob = "dob";
+
+    
 }
 
+<script type="text/javascript">
+    function AddDOB(x,id) {
+
+        var today = new Date();
+        var presentYear = today.getFullYear();
+        var value = $("#dob"+x).val();
+
+        if (value !== "") {
+            var result = window.confirm("Is This Your BirthDate: " + value);
+            if (result) {
+                alert("Done");
+                $("#"+x).css("display", "none");
+                $("#"+(x+1)).css("display", "block");
+                $('#'+(x+1)).html("<i>"+value+"</p>");
+
+                //asp data update
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("UpdateDOB")',
+                    data: { id: id, dob: value },
+                    success: function (result) {
+                        if (result.Message === "Success")
+                            alert("Date Of Birth Updated");
+                        else
+                            alert("error occured");
+                    },
+                    error:function(ex) {
+                        alert(ex);
+                    }
+            });
+
+
+            } else {
+                alert("Try Again");
+                $("#dob"+x).val("");
+            }
+        } else {
+           window.alert("Pick A Date First");
+        }
+    }
+
+</script>
 <h2>Customer details</h2>
 
-<table class="table">
+<table class="table table-sm">
     <thead>
-    <tr>
-        <th>Id</th>
-        <th>Name</th>
-    </tr>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Discount</th>
+            <th>Date Of Birth</th>
+        </tr>
     </thead>
-    @foreach (var customer in Model.customers)
+    @foreach (var customer in Model)
     {
+        i+=2;
+        y+=2;
         <tr>
             <td>@customer.Id</td>
-            <td ><a href="info/@customer.Name">@customer.Name</a></td>
+           <td><a href="info/@customer.Name">@customer.Name</a></td> 
+            <td>@customer.MemberShip.Discount</td>
+            <td>@if (String.IsNullOrEmpty(customer.DOB) || String.IsNullOrWhiteSpace(customer.DOB))
+                { 
+                    <div id=@i>
+                        <input type="date" id=@(dob+i) value="" />
+                        <button type="button" class="btn btn-outline-primary btn-sm" onclick="AddDOB(@i,@customer.Id)">Update</button>
+                    </div>
+                    <div id=@y style="display: none"></div>
+                }
+                else
+                {
+                    @customer.DOB.ToString();
+                }
+            </td>
         </tr>
     }
 </table>

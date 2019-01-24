@@ -53,3 +53,12 @@ D:\asp Mvc 5 (learning)\exercise\Exercise\Exercise\bin\Microsoft.Owin.Security.M
 D:\asp Mvc 5 (learning)\exercise\Exercise\Exercise\obj\Debug\Exercise.csprojResolveAssemblyReference.cache
 D:\asp Mvc 5 (learning)\exercise\Exercise\Exercise\obj\Debug\Exercise.dll
 D:\asp Mvc 5 (learning)\exercise\Exercise\Exercise\obj\Debug\Exercise.pdb
+D:\asp Mvc 5 (learning)\exercise\Exercise\Exercise\obj\Debug\Exercise.Migrations.initialmodels.resources
+D:\asp Mvc 5 (learning)\exercise\Exercise\Exercise\obj\Debug\Exercise.csproj.GenerateResource.Cache
+D:\asp Mvc 5 (learning)\exercise\Exercise\Exercise\obj\Debug\Exercise.Migrations.initialmodel.resources
+D:\asp Mvc 5 (learning)\exercise\Exercise\Exercise\obj\Debug\Exercise.Migrations.CustomerNMembers.resources
+D:\asp Mvc 5 (learning)\exercise\Exercise\Exercise\obj\Debug\Exercise.Migrations.AddKeys.resources
+D:\asp Mvc 5 (learning)\exercise\Exercise\Exercise\obj\Debug\Exercise.Migrations.AddAcountType.resources
+D:\asp Mvc 5 (learning)\exercise\Exercise\Exercise\obj\Debug\Exercise.Migrations.db.resources
+D:\asp Mvc 5 (learning)\exercise\Exercise\Exercise\obj\Debug\Exercise.Migrations.AddDateOfBirth.resources
+D:\asp Mvc 5 (learning)\exercise\Exercise\Exercise\obj\Debug\Exercise.Migrations.AddMovieTable.resources

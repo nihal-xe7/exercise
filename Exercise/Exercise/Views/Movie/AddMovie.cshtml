@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "AddMovie";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<script type="text/javascript">
+    function AddMoviePlz() {
+        var name = $("#name").val();
+        var description = $("#des").val();
+
+
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("MovieAddingOperation")',
+            data: { name: name, des: description },
+            success: function (result) {
+
+                alert(result.Message);
+                if (result.Message == "success") {
+                    alert("Movie Added");
+                } else {
+                    alert("Error Occured");
+                }
+            },
+            error:function(ex) {
+                alert(ex);
+            }
+        });
+    }
+
+</script>
+
+<h2>Add New Movie</h2>
+
+<form >
+    <div class="form-control">
+        <label for="Name">Enter Movie name: </label>
+        <input type="text" id="name"/>
+    </div>
+    
+    <div class="form-control">
+        <label for="Desscription">Enter Description</label>
+        <textarea id="des"></textarea>
+    </div>
+    
+    <button class="btn btn-sm btn-outline-success" onclick="AddMoviePlz()">Submit</button>
+</form>

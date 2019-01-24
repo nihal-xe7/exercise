@@ -1,0 +1,25 @@
+﻿@model List<Exercise.Models.MemberShip>
+@{
+    ViewBag.Title = "details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Customer details</h2>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Subscription</th>
+    </tr>
+    </thead>
+    @foreach (var customer in Model)
+    {
+        <tr>
+            <td>@customer.Id</td>
+            <td>@customer.IsSubscribed</td>
+        </tr>
+    }
+</table>
+

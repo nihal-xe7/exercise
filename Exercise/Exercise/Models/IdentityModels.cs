@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
+﻿using System.Data.Entity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Exercise.Models
 {
@@ -9,6 +10,11 @@ namespace Exercise.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<MemberShip> MemberShips { get; set; }
+
+        public DbSet<Movies> Movies { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection")
         {

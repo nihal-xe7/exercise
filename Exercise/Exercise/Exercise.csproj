@@ -161,13 +161,48 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MemberShipController.cs" />
     <Compile Include="Controllers\MovieController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201901211120021_initialmodels.cs" />
+    <Compile Include="Migrations\201901211120021_initialmodels.Designer.cs">
+      <DependentUpon>201901211120021_initialmodels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901211158026_initialmodel.cs" />
+    <Compile Include="Migrations\201901211158026_initialmodel.Designer.cs">
+      <DependentUpon>201901211158026_initialmodel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901221219469_CustomerNMembers.cs" />
+    <Compile Include="Migrations\201901221219469_CustomerNMembers.Designer.cs">
+      <DependentUpon>201901221219469_CustomerNMembers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901221224302_AddKeys.cs" />
+    <Compile Include="Migrations\201901221224302_AddKeys.Designer.cs">
+      <DependentUpon>201901221224302_AddKeys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901240436370_AddAcountType.cs" />
+    <Compile Include="Migrations\201901240436370_AddAcountType.Designer.cs">
+      <DependentUpon>201901240436370_AddAcountType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901240536542_db.cs" />
+    <Compile Include="Migrations\201901240536542_db.Designer.cs">
+      <DependentUpon>201901240536542_db.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901240538109_AddDateOfBirth.cs" />
+    <Compile Include="Migrations\201901240538109_AddDateOfBirth.Designer.cs">
+      <DependentUpon>201901240538109_AddDateOfBirth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901240947205_AddMovieTable.cs" />
+    <Compile Include="Migrations\201901240947205_AddMovieTable.Designer.cs">
+      <DependentUpon>201901240947205_AddMovieTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\MemberShip.cs" />
     <Compile Include="Models\Movies.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -221,6 +256,9 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Movie\available.cshtml" />
     <Content Include="Views\Customer\details.cshtml" />
+    <Content Include="Views\Customer\MemberShipDetails.cshtml" />
+    <Content Include="Views\MemberShip\Index.cshtml" />
+    <Content Include="Views\Movie\AddMovie.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -231,6 +269,32 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201901211120021_initialmodels.resx">
+      <DependentUpon>201901211120021_initialmodels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901211158026_initialmodel.resx">
+      <DependentUpon>201901211158026_initialmodel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901221219469_CustomerNMembers.resx">
+      <DependentUpon>201901221219469_CustomerNMembers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901221224302_AddKeys.resx">
+      <DependentUpon>201901221224302_AddKeys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901240436370_AddAcountType.resx">
+      <DependentUpon>201901240436370_AddAcountType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901240536542_db.resx">
+      <DependentUpon>201901240536542_db.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901240538109_AddDateOfBirth.resx">
+      <DependentUpon>201901240538109_AddDateOfBirth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901240947205_AddMovieTable.resx">
+      <DependentUpon>201901240947205_AddMovieTable.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

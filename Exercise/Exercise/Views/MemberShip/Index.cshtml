@@ -1,0 +1,39 @@
+﻿@model List<Exercise.Models.Customer>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Member Ship Data</h2>
+
+<table class="table table-info table-sm">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Account Type</th>
+        <th>Subscription</th>
+    </tr>
+    </thead>
+    @foreach (var members in Model)
+    {
+        <tr>
+            <td>@members.Id</td>
+            <td>@members.Name</td>
+            <td>@if (!String.IsNullOrEmpty(members.MemberShip.AcountType))
+                {
+                    <p>@members.MemberShip.AcountType</p>
+                }
+                else
+                {
+                    <p>Trial</p>
+                }
+            </td>
+            <td>@members.MemberShip.IsSubscribed</td>
+        </tr>
+    }
+    
+
+</table>
+
+
