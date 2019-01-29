@@ -15,6 +15,10 @@ namespace Exercise.Models
         [StringLength(255)]
         public string Name { get; set; }
 
+        [Required]
+        [StringLength(12)]
+        public string Password { set; get; }
+
         public int MemberShipID { get; set; }
 
         public string DOB { get; set; }
